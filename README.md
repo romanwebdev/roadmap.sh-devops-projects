@@ -6,3 +6,5 @@ These projects follow the [roadmap.sh](https://roadmap.sh/devops/projects) **Dev
 
 1. [**Server Performance Stats**](./projects/01-server-performance-stats) [🔗](https://roadmap.sh/projects/server-stats)
    ![Shell script icon badge](https://img.shields.io/badge/--121011?logo=gnu-bash&logoColor=white)
+2. [**Log Archive Tool**](./projects/02-log-archive-tool) [🔗](https://roadmap.sh/projects/log-archive-tool)
+   ![Shell script icon badge](https://img.shields.io/badge/--121011?logo=gnu-bash&logoColor=white)
