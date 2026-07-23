@@ -12,3 +12,5 @@ These projects follow the [roadmap.sh](https://roadmap.sh/devops/projects) **Dev
    ![Shell script icon badge](https://img.shields.io/badge/--121011?logo=gnu-bash&logoColor=white)
 4. [**Basic Dockerfile**](./projects/04-basic-dockerfile) [🔗](https://roadmap.sh/projects/basic-dockerfile)
    ![Docker icon badge](https://img.shields.io/badge/--2CA5E0?logo=docker&logoColor=white)
+5. [**Dummy Systemd Service**](./projects/05-dummy-systemd-service) [🔗](https://roadmap.sh/projects/dummy-systemd-service)
+   ![Shell script icon badge](https://img.shields.io/badge/--121011?logo=gnu-bash&logoColor=white)

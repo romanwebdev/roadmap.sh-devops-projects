@@ -1,0 +1,8 @@
+[Unit]
+Decription=Dummy service 
+
+[Service]
+ExecStart=/home/services/dummy.sh
+
+[Install]
+WantedBy=multi-user.target
