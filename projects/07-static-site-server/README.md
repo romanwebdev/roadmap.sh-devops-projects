@@ -13,7 +13,7 @@ Serve a simple static site (HTML/CSS/images) from the EC2 instance's public IP u
 
 ## 1. Server setup (EC2, Ubuntu)
 
-Connected via SSH (instance already provisioned with SSH access).
+Connected via SSH (instance already provisioned with [SSH access](../06-ssh-remote-server-setup)).
 
 Installed nginx:
 
