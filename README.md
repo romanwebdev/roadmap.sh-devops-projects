@@ -19,3 +19,5 @@ These projects follow the [roadmap.sh](https://roadmap.sh/devops/projects) **Dev
 7. [**Static Site Server**](./projects/07-static-site-server) [🔗](https://roadmap.sh/projects/static-site-server)
    ![AWS icon badge](https://img.shields.io/badge/AWS-FF9900?logo=amazonwebservices&logoColor=white)
    ![Shell script icon badge](https://img.shields.io/badge/--121011?logo=gnu-bash&logoColor=white)
+8. [**EC2 Instance**](./projects/08-ec2-instance/) [🔗](https://roadmap.sh/projects/ec2-instance)
+   ![AWS icon badge](https://img.shields.io/badge/AWS-FF9900?logo=amazonwebservices&logoColor=white)
