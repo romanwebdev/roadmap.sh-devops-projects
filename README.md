@@ -16,3 +16,6 @@ These projects follow the [roadmap.sh](https://roadmap.sh/devops/projects) **Dev
    ![Shell script icon badge](https://img.shields.io/badge/--121011?logo=gnu-bash&logoColor=white)
 6. [**SSH Remote Server Setup**](./projects/06-ssh-remote-server-setup) [🔗](https://roadmap.sh/projects/ssh-remote-server-setup)
    ![AWS icon badge](https://img.shields.io/badge/AWS-FF9900?logo=amazonwebservices&logoColor=white)
+7. [**Static Site Server**](./projects/07-static-site-server) [🔗](https://roadmap.sh/projects/static-site-server)
+   ![AWS icon badge](https://img.shields.io/badge/AWS-FF9900?logo=amazonwebservices&logoColor=white)
+   ![Shell script icon badge](https://img.shields.io/badge/--121011?logo=gnu-bash&logoColor=white)
