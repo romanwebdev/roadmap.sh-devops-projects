@@ -14,3 +14,5 @@ These projects follow the [roadmap.sh](https://roadmap.sh/devops/projects) **Dev
    ![Docker icon badge](https://img.shields.io/badge/--2CA5E0?logo=docker&logoColor=white)
 5. [**Dummy Systemd Service**](./projects/05-dummy-systemd-service) [🔗](https://roadmap.sh/projects/dummy-systemd-service)
    ![Shell script icon badge](https://img.shields.io/badge/--121011?logo=gnu-bash&logoColor=white)
+6. [**SSH Remote Server Setup**](./projects/06-ssh-remote-server-setup) [🔗](https://roadmap.sh/projects/ssh-remote-server-setup)
+   ![AWS icon badge](https://img.shields.io/badge/AWS-FF9900?logo=amazonwebservices&logoColor=white)
