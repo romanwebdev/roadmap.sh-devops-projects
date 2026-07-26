@@ -21,3 +21,6 @@ These projects follow the [roadmap.sh](https://roadmap.sh/devops/projects) **Dev
    ![Shell script icon badge](https://img.shields.io/badge/--121011?logo=gnu-bash&logoColor=white)
 8. [**EC2 Instance**](./projects/08-ec2-instance/) [🔗](https://roadmap.sh/projects/ec2-instance)
    ![AWS icon badge](https://img.shields.io/badge/AWS-FF9900?logo=amazonwebservices&logoColor=white)
+9. [**Simple Monitoring**](./projects/09-simple-monitoring) [🔗](https://roadmap.sh/projects/simple-monitoring-dashboard)
+   ![AWS icon badge](https://img.shields.io/badge/AWS-FF9900?logo=amazonwebservices&logoColor=white)
+   ![Shell script icon badge](https://img.shields.io/badge/--121011?logo=gnu-bash&logoColor=white)
