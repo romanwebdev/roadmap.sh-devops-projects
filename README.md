@@ -24,3 +24,5 @@ These projects follow the [roadmap.sh](https://roadmap.sh/devops/projects) **Dev
 9. [**Simple Monitoring**](./projects/09-simple-monitoring) [🔗](https://roadmap.sh/projects/simple-monitoring-dashboard)
    ![AWS icon badge](https://img.shields.io/badge/AWS-FF9900?logo=amazonwebservices&logoColor=white)
    ![Shell script icon badge](https://img.shields.io/badge/--121011?logo=gnu-bash&logoColor=white)
+10. [**Bastion Host**](./projects/10-bastion-host) [🔗](https://roadmap.sh/projects/bastion-host)
+    ![AWS icon badge](https://img.shields.io/badge/AWS-FF9900?logo=amazonwebservices&logoColor=white)
