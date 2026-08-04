@@ -1,0 +1,155 @@
+#!/bin/bash
+
+DB_DIR="/var/lib/integrity-check"
+DB_FILE="$DB_DIR/hashes.db"
+
+mkdir -p "$DB_DIR"
+
+# Calculate SHA-256 hash for a single file.
+get_hash() {
+  local file="$1"
+
+  if [[ ! -f "$file" ]]; then
+    echo "Error: '$file' is not a regular file." >&2
+    return 1
+  fi
+
+  sha256sum "$file" | awk '{print $1}'
+}
+
+# Ensure the hash database exists before performing operations.
+require_database() {
+  if [[ ! -f "$DB_FILE" ]]; then
+    echo "Error: Hash database does not exist."
+    return 1
+  fi
+}
+
+# Initialize the integrity database with hashes
+# for a file or all files in a directory.
+init() {
+  local path="$1"
+  local hash
+  local file
+
+  > "$DB_FILE"
+
+  if [[ -f "$path" ]]; then
+    hash=$(get_hash "$path")
+    echo "$path|$hash" >> "$DB_FILE"
+
+  elif [[ -d "$path" ]]; then
+    for file in "$path"/*; do
+      if [[ -f "$file" ]]; then
+        hash=$(get_hash "$file")
+        echo "$file|$hash" >> "$DB_FILE"
+      fi
+    done
+
+  else
+    echo "Error: '$path' does not exist."
+    return 1
+  fi
+
+  echo "Hashes stored successfully."
+}
+
+# Compare the current file hash with the stored hash.
+check() {
+  local path="$1"
+  local current_hash
+  local stored_hash
+  local stored_path
+
+  require_database || return 1
+
+  # Read each database entry in the format:
+  # /path/to/file|sha256_hash
+  while IFS="|" read -r stored_path stored_hash; do
+
+    if [[ "$stored_path" != "$path" ]]; then
+      continue
+    fi
+
+    if ! current_hash=$(get_hash "$path"); then
+      return 1
+    fi
+
+    if [[ "$current_hash" == "$stored_hash" ]]; then
+      echo "Status: Unmodified"
+      return 0
+    else
+      echo "Status: Modified (Hash mismatch)"
+      return 1
+    fi
+
+  done < "$DB_FILE"
+
+  echo "Error: File not found in hash database."
+}
+
+# Replace the stored hash after a trusted file change.
+update() {
+  local path="$1"
+  local current_hash
+  local stored_path
+  local stored_hash
+  local temp_file
+  local found=false
+
+  # Create a temporary database to safely update entries.
+  temp_file=$(mktemp)
+
+  require_database || return 1
+
+  if [[ ! -f "$path" ]]; then
+    echo "Error: '$path' is not a regular file."
+    rm -f "$temp_file"
+    return 1
+  fi
+
+  if ! current_hash=$(get_hash "$path"); then
+    return 1
+  fi
+
+  while IFS="|" read -r stored_path stored_hash; do
+
+    if [[ "$stored_path" == "$path" ]]; then
+      echo "$path|$current_hash" >> "$temp_file"
+      found=true
+    else
+      echo "$stored_path|$stored_hash" >> "$temp_file"
+    fi
+
+  done < "$DB_FILE"
+
+  if ! $found; then
+    rm -f "$temp_file"
+    echo "Error: File not found in hash database."
+    return 1
+  fi
+
+  # Replace the old database with the updated one.
+  mv "$temp_file" "$DB_FILE"
+
+  echo "Hash updated successfully."
+}
+
+case "$1" in
+  init)
+    init "$2"
+    ;;
+
+  check)
+    check "$2"
+    ;;
+
+  update)
+    update "$2"
+    ;;
+
+  *)
+    echo "Usage: $0 {init|check|update} <path>"
+    exit 1
+    ;;
+esac
