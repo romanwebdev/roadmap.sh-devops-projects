@@ -30,3 +30,5 @@ These projects follow the [roadmap.sh](https://roadmap.sh/devops/projects) **Dev
     ![Shell script icon badge](https://img.shields.io/badge/--121011?logo=gnu-bash&logoColor=white)
 12. [**Linux Server Setup**](./projects/12-linux-server-setup) [🔗](https://roadmap.sh/projects/linux-server-setup)
     ![AWS icon badge](https://img.shields.io/badge/AWS-FF9900?logo=amazonwebservices&logoColor=white)
+13. [**Service Discovery**](./projects/13-service-discovery) [🔗](https://roadmap.sh/projects/service-discovery)
+    ![AWS icon badge](https://img.shields.io/badge/AWS-FF9900?logo=amazonwebservices&logoColor=white)

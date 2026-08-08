@@ -1,0 +1,49 @@
+services:
+  consul:
+    image: hashicorp/consul:latest
+    command: agent -dev -client=0.0.0.0
+    ports:
+      - "8500:8500"
+      - "8600:8600/udp"
+      - "8600:8600/tcp"
+    networks: [consul-net]
+
+  service-a:
+    build: ./service-a
+    environment:
+      - SERVICE_NAME=service-a
+      - SERVICE_PORT=3001
+      - CONSUL_HOST=consul
+    networks: [consul-net]
+    depends_on: [consul]
+
+  service-b:
+    build: ./service-b
+    environment:
+      - SERVICE_NAME=service-b
+      - SERVICE_PORT=3002
+      - CONSUL_HOST=consul
+    networks: [consul-net]
+    depends_on: [consul]
+
+  service-c:
+    build: ./service-c
+    environment:
+      - SERVICE_NAME=service-c
+      - SERVICE_PORT=3003
+      - CONSUL_HOST=consul
+    networks: [consul-net]
+    depends_on: [consul]
+
+  gateway:
+    build: ./gateway
+    ports:
+      - "8080:8080"
+    environment:
+      - CONSUL_DNS_HOST=consul
+      - CONSUL_DNS_PORT=8600
+    networks: [consul-net]
+    depends_on: [consul]
+
+networks:
+  consul-net:
