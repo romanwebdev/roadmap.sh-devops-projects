@@ -28,3 +28,5 @@ These projects follow the [roadmap.sh](https://roadmap.sh/devops/projects) **Dev
     ![AWS icon badge](https://img.shields.io/badge/AWS-FF9900?logo=amazonwebservices&logoColor=white)
 11. [**File Integrity Checker**](./projects/11-file-integrity-checker) [🔗](https://roadmap.sh/projects/file-integrity-checker)
     ![Shell script icon badge](https://img.shields.io/badge/--121011?logo=gnu-bash&logoColor=white)
+12. [**Linux Server Setup**](./projects/12-linux-server-setup) [🔗](https://roadmap.sh/projects/linux-server-setup)
+    ![AWS icon badge](https://img.shields.io/badge/AWS-FF9900?logo=amazonwebservices&logoColor=white)
